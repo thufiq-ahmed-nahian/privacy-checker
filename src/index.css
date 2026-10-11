@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-blue: #2563EB;
+  --color-brand-light: #F8FAFC;
+  --color-brand-dark: #0F172A;
+}
+
+/* Enable class-based dark mode toggle support in Tailwind v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    background-color: #f8fafc; /* slate-50 */
+    color: #0f172a; /* slate-900 */
+    min-height: 100vh;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .dark body, html.dark body {
+    background-color: #0f172a; /* slate-900 */
+    color: #f1f5f9; /* slate-100 */
+  }
+}
